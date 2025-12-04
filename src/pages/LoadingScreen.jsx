@@ -4,18 +4,18 @@ import { Loader2 } from "lucide-react";
 
 export default function LoadingScreen() {
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center bg-white">
+    <div className="fixed inset-0 z-50 flex items-center justify-center bg-[#161E31]">
       {/* Minimal Centered Spinner */}
       <div className="flex flex-col items-center gap-6">
         {/* Animated Spinner – Red stroke */}
-        <Loader2 className="w-12 h-12 animate-spin text-red-600" />
+        <Loader2 className="w-12 h-12 animate-spin text-[#F8B179]" />
 
         {/* Subtle pulsing dot pattern */}
         <div className="flex gap-2">
           {[0, 1, 2].map((i) => (
             <div
               key={i}
-              className="w-2 h-2 bg-red-600 rounded-full animate-pulse"
+              className="w-2 h-2 bg-[#F8B179] rounded-full animate-pulse"
               style={{
                 animationDelay: `${i * 150}ms`,
                 animationDuration: "1.2s",
@@ -25,7 +25,7 @@ export default function LoadingScreen() {
         </div>
 
         {/* Optional: Minimal text */}
-        <p className="text-sm text-gray-500 font-medium tracking-wider">
+        <p className="text-sm text-[#F8B179] font-medium tracking-wider">
           Loading IdentityEA...
         </p>
       </div>

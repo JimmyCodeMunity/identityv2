@@ -54,7 +54,7 @@ const Navbar = () => {
                 href="/products"
                 className="rainbow relative z-0 overflow-hidden p-0.5 rounded-full hover:scale-105 transition duration-300"
               >
-                <button className="px-8 py-3 text-sm font-medium text-white bg-gray-900/80 rounded-full backdrop-blur">
+                <button className="px-8 py-3 text-sm font-medium bg-[#161E31] text-[#F8B179] rounded-full backdrop-blur">
                   Shop Now
                 </button>
               </a>
