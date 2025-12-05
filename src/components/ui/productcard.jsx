@@ -106,7 +106,7 @@ const ProductCard = ({ product }) => {
             aria-label="Add to wishlist"
             onClick={(e) => e.preventDefault()} // Prevent navigation on click
           >
-            <Heart className="h-5 w-5" />
+            {/* <Heart className="h-5 w-5" /> */}
           </button>
         </div>
 

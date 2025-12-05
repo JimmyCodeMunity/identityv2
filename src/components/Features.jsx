@@ -1,128 +1,124 @@
 import { useState } from "react";
+import { Zap, Shield, Truck, Sparkles, ScanLine, Palette } from "lucide-react";
 
 export const Features = () => {
-  const [isHover, setIsHover] = useState(false);
+  const [hoveredIndex, setHoveredIndex] = useState(null);
+
+  const features = [
+    {
+      icon: <Zap className="w-8 h-8" />,
+      title: "24-Hour Express Printing",
+      desc: "Need wristbands tomorrow? We print and deliver in Nairobi same-day. Nationwide in 48hrs max.",
+      color: "from-amber-400 to-orange-500",
+      bg: "bg-amber-50",
+      border: "border-amber-200",
+      hoverBg: "bg-amber-100",
+    },
+    {
+      icon: <Shield className="w-8 h-8" />,
+      title: "Tamper-Proof & Secure",
+      desc: "Serialized QR codes, hologram seals, and one-time-lock clasps. Say goodbye to fakes and gatecrashers.",
+      color: "from-emerald-400 to-teal-600",
+      bg: "bg-emerald-50",
+      border: "border-emerald-200",
+      hoverBg: "bg-emerald-100",
+    },
+    {
+      icon: <ScanLine className="w-8 h-8" />,
+      title: "RFID & Cashless Ready",
+      desc: "Upgrade to tap-to-enter and cashless payments. Perfect for festivals, concerts & VIP zones.",
+      color: "from-purple-400 to-indigo-600",
+      bg: "bg-purple-50",
+      border: "border-purple-200",
+      hoverBg: "bg-purple-100",
+    },
+    {
+      icon: <Palette className="w-8 h-8" />,
+      title: "Full Custom Branding",
+      desc: "Your logo, colors, sponsor logos, and event theme — printed in stunning full-color HD.",
+      color: "from-pink-400 to-rose-500",
+      bg: "bg-pink-50",
+      border: "border-pink-200",
+      hoverBg: "bg-pink-100",
+    },
+    {
+      icon: <Truck className="w-8 h-8" />,
+      title: "Nationwide Delivery",
+      desc: "Free shipping on orders over 500 wristbands. Track your package live — from print to your venue.",
+      color: "from-blue-400 to-cyan-500",
+      bg: "bg-blue-50",
+      border: "border-blue-200",
+      hoverBg: "bg-blue-100",
+    },
+    {
+      icon: <Sparkles className="w-8 h-8" />,
+      title: "VIP & Tiered Access",
+      desc: "Color-coded wristbands for General, VIP, Backstage, Press — control access zones with ease.",
+      color: "from-yellow-400 to-amber-600",
+      bg: "bg-yellow-50",
+      border: "border-yellow-200",
+      hoverBg: "bg-yellow-100",
+    },
+  ];
 
   return (
-    <>
-      <div className="relative bg-[#161E31] py-20 overflow-hidden ">
-        {/* Background Blob + Image Container */}
-        <div className="relative max-w-7xl mx-auto px-6 lg:px-8">
-          <div className="flex flex-col lg:flex-row items-center justify-between gap-12">
-            
-            {/* Left Side: Blob + Image */}
-            <div className="relative flex justify-center lg:justify-end w-full lg:w-1/2">
-              {/* Orange Blob Background */}
-              <div className="absolute inset-0 flex items-center flex-row justify-center pointer-events-none">
-                <svg
-                  viewBox="0 0 200 200"
-                  className="w-full max-w-lg lg:max-w-2xl opacity-80"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    fill="#F8B179"
-                    d="M34.5,-30.6C43,-16.7,47.2,-2.5,47,15.7C46.8,33.8,42.2,55.9,26.4,69C10.6,82,-16.4,86.1,-38.6,76.7C-60.9,67.3,-78.4,44.6,-78.3,23.9C-78.3,3.2,-60.6,-15.5,-44.6,-31.1C-28.7,-46.7,-14.3,-59.2,-0.7,-58.6C12.9,-58.1,25.9,-44.5,34.5,-30.6Z"
-                    transform="translate(100 100)"
-                  />
-                </svg>
-              </div>
-
-              {/* Main Image - sits ON TOP of the blob */}
-              <img
-                src="./images/club.png"
-                alt="Wristbands in action"
-                className="relative z-10 w-full max-w-md lg:max-w-2xl object-contain drop-shadow-2xl"
-              />
-            </div>
-
-            {/* Right Side: Feature Cards */}
-            <div className="w-full lg:w-1/2 space-y-8">
-              <div
-                className="group cursor-pointer"
-                onMouseEnter={() => setIsHover(true)}
-                onMouseLeave={() => setIsHover(false)}
-              >
-                <div
-                  className={`p-6 rounded-2xl border transition-all duration-300 flex items-start gap-5 ${
-                    isHover
-                      ? "bg-violet-100 border-violet-300"
-                      : "bg-violet-100 border-violet-300"
-                  }`}
-                >
-                  <div className="p-3 bg-violet-200 rounded-xl">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      className="w-7 h-7 text-violet-600"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                      strokeWidth={2}
-                    >
-                      <path d="M2.586 17.414A2 2 0 0 0 2 18.828V21a1 1 0 0 0 1 1h3a1 1 0 0 0 1-1v-1a1 1 0 0 1 1-1h1a1 1 0 0 0 1-1v-1a1 1 0 0 1 1-1h.172a2 2 0 0 0 1.414-.586l.814-.814a6.5 6.5 0 1 0-4-4z" />
-                      <circle cx="16.5" cy="7.5" r=".5" fill="currentColor" />
-                    </svg>
-                  </div>
-                  <div>
-                    <h3 className="text-xl font-bold text-gray-900">Real-Time Entry Tracking</h3>
-                    <p className="text-gray-600 mt-2">Monitor attendance, control access zones, and get live reports during your event.</p>
-                  </div>
-                </div>
-              </div>
-
-              <div className="group cursor-pointer">
-                <div className="p-6 rounded-2xl border border-transparent hover:bg-green-100 hover:border-green-300 transition-all duration-300 flex items-start gap-5">
-                  <div className="p-3 bg-green-200 rounded-xl">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      className="w-7 h-7 text-green-600"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                      strokeWidth={2}
-                    >
-                      <path d="M12 3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7" />
-                      <path d="M18.375 2.625a1 1 0 0 1 3 3l-9.013 9.014a2 2 0 0 1-.853.505l-2.873.84a.5 .5 0 0 1-.62-.62l.84-2.873a2 2 0 0 1 .506-.852z" />
-                    </svg>
-                  </div>
-                  <div>
-                    <h3 className="text-xl font-bold text-gray-900">Cashless & RFID Ready</h3>
-                    <p className="text-gray-600 mt-2">Tap-to-pay bars, VIP zones, and instant top-ups — no cash, no queues.</p>
-                  </div>
-                </div>
-              </div>
-
-              <div className="group cursor-pointer">
-                <div className="p-6 rounded-2xl border border-transparent hover:bg-orange-100 hover:border-orange-300 transition-all duration-300 flex items-start gap-5">
-                  <div className="p-3 bg-orange-200 rounded-xl">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      className="w-7 h-7 text-orange-600"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                      strokeWidth={2}
-                    >
-                      <path d="M12 15V3" />
-                      <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
-                      <path d="m7 10 5 5 5-5" />
-                    </svg>
-                  </div>
-                  <div>
-                    <h3 className="text-xl font-bold text-gray-900">Fast & Secure Delivery</h3>
-                    <p className="text-gray-600 mt-2">24–48 hour printing + same-day Nairobi delivery. Your wristbands arrive on time, every time.</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+    <section className="relative bg-gradient-to-b from-[#161E31] via-[#1e1b4b] to-[#161E31] py-24 overflow-hidden">
+      {/* Background Decorative Blob */}
+      <div className="absolute inset-0 opacity-40 pointer-events-none">
+        <div className="absolute top-20 -left-40 w-96 h-96 bg-[#F8B179]/30 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-0 right-0 w-80 h-80 bg-[#F8B179]/20 rounded-full blur-3xl"></div>
       </div>
 
-      {/* Optional: Global Poppins Font (add once in your app) */}
-      <style jsx global>{`
-        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap');
-        body { font-family: 'Poppins', sans-serif; }
-      `}</style>
-    </>
+      <div className="relative max-w-7xl mx-auto px-6 lg:px-8">
+        <div className="text-center mb-16">
+          <h2 className="text-4xl md:text-6xl font-bold text-white mb-6">
+            Why Kenya's Top Events Choose{" "}
+            <span className="text-[#F8B179]">IdentityEA</span>
+          </h2>
+          <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+            Secure, beautiful, and delivered on time — every single event.
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {features.map((feature, index) => (
+            <div
+              key={index}
+              onMouseEnter={() => setHoveredIndex(index)}
+              onMouseLeave={() => setHoveredIndex(null)}
+              className="group cursor-pointer"
+            >
+              <div
+                className={`p-8 rounded-3xl border-2 ${feature.border} ${hoveredIndex === index ? feature.hoverBg : feature.bg
+                  } backdrop-blur-sm transition-all duration-500 hover:shadow-2xl hover:shadow-[#F8B179]/20 hover:-translate-y-3`}
+              >
+                <div className={`w-16 h-16 rounded-2xl bg-gradient-to-br ${feature.color} p-3 text-white shadow-lg mb-6`}>
+                  {feature.icon}
+                </div>
+                <h3 className="text-2xl font-bold text-[#161E31] mb-4">
+                  {feature.title}
+                </h3>
+                <p className="text-gray-700 leading-relaxed">
+                  {feature.desc}
+                </p>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        {/* Optional CTA */}
+        <div className="text-center mt-16">
+          <a
+            href="/products"
+            className="inline-flex items-center gap-3 px-10 py-5 bg-[#F8B179] text-[#161E31] font-bold text-lg rounded-full hover:bg-[#f5a065] transition shadow-xl hover:shadow-[#F8B179]/50"
+          >
+            Explore All Wristbands
+            <svg xmlns="http://www.w3.org/2000/svg" className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+            </svg>
+          </a>
+        </div>
+      </div>
+    </section>
   );
 };

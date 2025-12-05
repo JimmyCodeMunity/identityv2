@@ -555,8 +555,8 @@ export default function ProductView() {
                     )}
                     {product.category.printed && (
                       <div className="space-y-1">
-                        <div className="text-sm text-red-600">Printed</div>
-                        <div className="text-xs font-medium text-red-600">
+                        <div className="text-sm text-[#676F9E]">Printed</div>
+                        <div className="text-xs font-medium text-[#F8B179]">
                           Kes. {product.category.printed}
                         </div>
                       </div>
@@ -577,7 +577,7 @@ export default function ProductView() {
             {/* QUOTE DIALOG */}
             <Dialog>
               <DialogTrigger asChild>
-                <button className="w-full bg-gray-900 text-white py-4 rounded-xl font-semibold hover:bg-black transition-all duration-200">
+                <button className="w-full bg-[#676F9E] text-white py-4 rounded-xl font-semibold hover:bg-black transition-all duration-200">
                   Get A Quote
                 </button>
               </DialogTrigger>
