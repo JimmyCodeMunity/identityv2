@@ -342,7 +342,6 @@ class App {
       { image: `./images/band10.jpeg`, text: '' },
       { image: `./images/band11.jpeg`, text: '' },
       { image: `./images/identityea.png`, text: '' },
-      { image: `./images/fabric.webp`, text: '' },
       { image: `./images/identityea5.png`, text: '' }
     ];
     const galleryItems = items && items.length ? items : defaultItems;
